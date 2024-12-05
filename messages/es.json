@@ -1,0 +1,10 @@
+{
+  "Nav": {
+    "home": "Inicio",
+    "about": "Acerca de mi",
+    "services": "Servicios",
+    "contact": "Contacto",
+    "work" : "Trabajos",
+    "hireMe": "Contrátame"
+  }
+}

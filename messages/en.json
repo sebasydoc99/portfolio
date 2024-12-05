@@ -1,0 +1,10 @@
+{
+  "Nav": {
+    "home": "Home",
+    "about": "About me",
+    "services": "Services",
+    "contact": "Contact",
+    "work" : "Work",
+    "hireMe": "Hire Me"
+  }
+}

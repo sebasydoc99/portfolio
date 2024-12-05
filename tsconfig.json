@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
     "paths": {
-      "app/*": ["./*"],
+      "app/*": ["./src/*"],
       "@/components/*": ["./a/components/*"],
       "@/lib/*" : ["./a/lib/*"],
-      "@/styles/*" : ["./styles/*"],
+      "@/styles/*" : ["./src/styles/*"],
+      "@/messages/*" : ["./messages/*"],
     },
     "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
