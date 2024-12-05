@@ -1,4 +1,5 @@
 import {Badge} from "@/components/ui/badge";
+import {Link} from "@/i18n/routing";
 
 let NavItem = (props: { title: string, route: string; icon: string }) => {
 
@@ -9,7 +10,7 @@ let NavItem = (props: { title: string, route: string; icon: string }) => {
             variant={"secondary"}
             className={"container flex-row justify-around items-center px-4 py-2 w-auto gap-2"}
         >
-            {icon}<a href={route}>{ title }</a>
+            {icon}<Link href={route}>{ title }</Link>
         </Badge>
     );
 }

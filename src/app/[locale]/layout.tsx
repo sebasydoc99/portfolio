@@ -32,7 +32,7 @@ export default async function RootLayout({ children, params }: {
     const messages = await getMessages(locale);
 
     return (
-        <html lang="en" suppressHydrationWarning>
+        <html lang={locale} suppressHydrationWarning>
             <body className={jetbrainsMono.variable}>
                 <NextIntlClientProvider locale={locale} messages={messages}>
                     <ThemeProvider
