@@ -1,5 +1,7 @@
 export default function App() {
     return (
-        <div />
+        <div className={"container p-2"}>
+            Home
+        </div>
     );
 }
