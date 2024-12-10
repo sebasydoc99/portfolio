@@ -4,6 +4,7 @@ import {NextIntlClientProvider} from "next-intl";
 import {JetBrains_Mono} from "next/font/google";
 import {ThemeProvider} from "@/components/theme-provider";
 import {Header} from "@/components/Header/Header";
+import PageTransition from "@/components/PageTransition";
 
 const jetbrainsMono = JetBrains_Mono({
     subsets: ["latin"],
@@ -43,7 +44,9 @@ export default async function RootLayout({ children, params }: {
                         disableTransitionOnChange
                     >
                         <Header />
-                        {children}
+                        <PageTransition>
+                            {children}
+                        </PageTransition>
                     </ThemeProvider>
                 </NextIntlClientProvider>
             </body>
