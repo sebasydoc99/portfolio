@@ -1,11 +1,12 @@
 import {NavItem} from "@/components/Header/NavItem";
-import { House, Info, FolderKanban, Layers, AtSign } from 'lucide-react';
+import { House, CircleUserRound, FolderKanban, Layers, AtSign } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import {ReactNode} from "react";
 
 interface NavItemObject {
     route: string;
     name: string;
-    icon: any;
+    icon: ReactNode;
 }
 
 const Nav = () => {
@@ -15,33 +16,33 @@ const Nav = () => {
         {
             route: "/",
             name: t("home"),
-            icon: <House className={"h-[1.2rem] w-[1.2rem]"}/>,
+            icon: <House className={"h-[1rem] w-[1rem]"}/>,
         },
         {
             route: "/about",
             name: t("about"),
-            icon: <Info className={"h-[1.2rem] w-[1.2rem]"}/>
+            icon: <CircleUserRound className={"h-[1rem] w-[1rem]"}/>
         },
         {
             route: "/services",
             name: t("services"),
-            icon: <Layers className={"h-[1.2rem] w-[1.2rem]"}/>
+            icon: <Layers className={"h-[1rem] w-[1rem]"}/>
         },
         {
-            route: "/projects",
+            route: "/work",
             name: t("work"),
-            icon: <FolderKanban className={"h-[1.2rem] w-[1.2rem]"}/>
+            icon: <FolderKanban className={"h-[1rem] w-[1rem]"}/>
         },
         {
             route: "/contact",
             name: t("contact"),
-            icon: <AtSign className={"h-[1.2rem] w-[1.2rem]"}/>
+            icon: <AtSign className={"h-[1rem] w-[1rem]"}/>
         }
     ];
 
     return (
         <nav>
-            <ul className={"container mx-auto flex justify-between items-center gap-2"}>
+            <ul className={"container mx-auto flex justify-between items-center gap-1"}>
                 {navItems.map((item, index) => (
                     <NavItem
                         key={index}

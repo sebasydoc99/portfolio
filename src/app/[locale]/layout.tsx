@@ -4,6 +4,7 @@ import {NextIntlClientProvider} from "next-intl";
 import {JetBrains_Mono} from "next/font/google";
 import {ThemeProvider} from "@/components/theme-provider";
 import {Header} from "@/components/Header/Header";
+import PageTransition from "@/components/PageTransition";
 
 const jetbrainsMono = JetBrains_Mono({
     subsets: ["latin"],
@@ -26,9 +27,10 @@ async function getMessages(locale: string) {
 
 export default async function RootLayout({ children, params }: {
     children: React.ReactNode;
-    params: { locale: string }
+    params: Promise<{ locale: string }>;
 }) {
-    const locale = params?.locale || "en";
+    const paramsPromise = await params;
+    const locale = paramsPromise?.locale || "en";
     const messages = await getMessages(locale);
 
     return (
@@ -42,7 +44,9 @@ export default async function RootLayout({ children, params }: {
                         disableTransitionOnChange
                     >
                         <Header />
-                        {children}
+                        <PageTransition>
+                            {children}
+                        </PageTransition>
                     </ThemeProvider>
                 </NextIntlClientProvider>
             </body>
